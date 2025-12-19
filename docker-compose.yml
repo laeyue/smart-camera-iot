@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: server/Dockerfile
-    image: smartcam-server:latest
     container_name: smartcam-server
     ports:
       - "7777:7777"
