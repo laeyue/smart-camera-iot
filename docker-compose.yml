@@ -2,14 +2,11 @@ version: "3.9"
 
 services:
   smartcam-server:
-    image: python:3.11-slim
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: smartcam-server:latest
     container_name: smartcam-server
-    volumes:
-      - ./:/app
-    working_dir: /app
-    command: >
-      bash -c "pip install --no-cache-dir -r server/requirements.txt &&
-               uvicorn server:app --host 0.0.0.0 --port 7777"
     ports:
       - "7777:7777"
     restart: unless-stopped
