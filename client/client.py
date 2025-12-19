@@ -13,7 +13,7 @@ from ultralytics import YOLO
 
 # ==== CONFIGURATION ====
 SERVER_HOST = "YOUR_SERVER_IP_OR_HOSTNAME"  # e.g. "192.168.1.10"
-SERVER_PORT = 8000
+SERVER_PORT = 7777
 WS_PATH = "/ws/pi"
 MODEL_PATH = "yolov8n.pt"
 TARGET_CLASS_ID = 24  # Backpack in COCO
