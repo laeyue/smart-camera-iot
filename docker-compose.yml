@@ -4,11 +4,11 @@ services:
   smartcam-server:
     image: python:3.11-slim
     container_name: smartcam-server
-    working_dir: /app
     volumes:
-      - ./server:/app
+      - ./:/app
+    working_dir: /app
     command: >
-      bash -c "pip install --no-cache-dir -r requirements.txt &&
+      bash -c "pip install --no-cache-dir -r server/requirements.txt &&
                uvicorn server:app --host 0.0.0.0 --port 7777"
     ports:
       - "7777:7777"
